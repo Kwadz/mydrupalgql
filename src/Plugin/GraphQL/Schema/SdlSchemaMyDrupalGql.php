@@ -19,7 +19,7 @@ class SdlSchemaMyDrupalGql extends SdlSchemaPluginBase {
   /**
    * {@inheritdoc}
    */
-  protected function getSchemaDefinition() {
+  public function getSchemaDefinition() {
     return <<<GQL
       schema {
         query: Query
@@ -88,7 +88,7 @@ GQL;
   /**
    * {@inheritdoc}
    */
-  protected function getResolverRegistry() {
+  public function getResolverRegistry() {
     $builder = new ResolverBuilder();
     $registry = new ResolverRegistry([
       'Article' => ContextDefinition::create('entity:node')
